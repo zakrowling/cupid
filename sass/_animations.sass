@@ -1,0 +1,107 @@
+// Scroll up animation
+
+@keyframes arrow
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(15px)
+  100%
+    transform: translateY(0px)
+
+@-webkit-keyframes arrow
+  0%
+    -webkit-transform: translateY(0px)
+  50%
+    -webkit-transform:translateY(15px)
+  100%
+    -webkit-transform:translateY(0px)
+
+
+// Fade in
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-webkit-keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+// Long fade in
+
+@keyframes long-fade-in
+  0%, 70%
+    opacity: 0
+  100%
+    opacity: 1
+
+@-webkit-keyframes long-fade-in
+  0%, 70%
+    opacity: 0
+  100%
+    opacity: 1
+
+
+// Background Fade In
+
+@keyframes background-fade
+  0%, 70%
+    background-image: none
+  100%
+    background-image: url('../img/backgrounds/sky.jpg')
+
+@-webkit-keyframes background-fade
+  0%, 70%
+    background-image: none
+  100%
+    background-image: url('../img/backgrounds/sky.jpg')
+
+
+// Fade in and up
+
+@keyframes fade-in-up
+  0%
+    opacity: 0
+  70%
+    opacity: 0
+    transform: translateY(40px)
+  100%
+    opacity: 1
+    transform: translateY(0px)
+
+@-webkit-keyframes fade-in-up
+  0%
+    opacity: 0
+  70%
+    opacity: 0
+    -webkit-transform: translateY(40px)
+  100%
+    opacity: 1
+    -webkit-transform:translateY(0px)
+
+
+// Blur animation
+
+@keyframes blur-animation  
+    0%, 40% 
+      filter: blur(50px)
+      transform: translateY(180px)
+    
+    100% 
+      filter: blur(0px)
+      transform: translateY(0px)
+
+@webkit-keyframes blur-animation  
+    0%, 40% 
+      -webkit-filter: blur(50px)
+      -webkit-transform: translateY(180px)
+    
+    100% 
+      -webkit-filter: blur(0px)
+      -webkit-transform: translateY(0px)
+    

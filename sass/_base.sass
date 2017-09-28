@@ -1,0 +1,65 @@
+// Font Family
+$montserrat: 'Montserrat', 'Gotham', 'Helvetica', Arial, Sans-serif
+
+
+// Colours
+$va-purple: #512698
+$va-red: #d6083b
+$va-dark-red: #be0f34
+
+// Animation vendor prefix mixin
+
+@mixin keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+  @-moz-keyframes #{$animation-name}
+    @content 
+  @-ms-keyframes #{$animation-name}
+    @content
+  @-o-keyframes #{$animation-name}
+    @content 
+  @keyframes #{$animation-name}
+    @content
+
+@mixin animation($str)
+  -webkit-animation: #{$str}
+  -moz-animation: #{$str}
+  -ms-animation: #{$str}
+  -o-animation: #{$str}
+  animation: #{$str}
+
+
+// Vendor prefixes
+
+@mixin prefix($property, $parameters...)
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, ""
+    #{$prefix}#{$property}: $parameters
+
+
+// Vertical align mixin
+
+@mixin vertical-align($position: relative)
+  position: $position
+  top: 50%
+  transform: translateY(-50%)
+
+@mixin remove-vertical-align($position: relative)
+  position: $position
+  top: 0
+  height: auto
+  transform: translateY(0%)
+
+
+// Media query mixins
+
+@mixin device-large
+  @media only screen and (max-width: 1400px)
+    @content
+
+@mixin device-medium
+  @media only screen and (max-width: 800px)
+    @content
+
+@mixin device-small
+  @media only screen and (max-width: 500px)
+    @content

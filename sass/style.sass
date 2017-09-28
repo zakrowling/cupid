@@ -1,0 +1,246 @@
+@import base
+@import animations
+@import sections
+
+
+.hide-touch
+  +device-large()
+    display: none !important
+
+.hide-mobile
+  +device-small()
+    display: none !important
+
+.small-bold-caps,
+.large-bold-caps
+  font-weight: 600
+  letter-spacing: 4px
+  text-transform: uppercase
+
+.large-bold-caps
+  padding: 1em 0 
+  font-size: 4em
+  line-height: 4em
+  letter-spacing: 12px
+
+.parallax-effect
+  position: relative
+  top: 0
+
+body
+  padding: 0
+  margin: 0
+  background: #fff url('../img/backgrounds/sky.jpg') no-repeat top left fixed
+  background-size: cover
+  font: 16px $montserrat
+  font-weight: 400
+  text-align: center
+  color: #fff
+  +animation(background-fade 7s ease 1)
+  &.load-bottom
+    background-image: none
+  +device-large()
+    font-size: 14px
+  +device-medium()
+    font-size: 10px
+    background-size: cover
+
+.pagination
+  right: 25px
+  list-style-type: none
+  z-index: 12000
+  cursor: pointer
+  +vertical-align(fixed)
+  +animation(long-fade-in 5s ease 1)
+  li
+    margin: 15px 0
+    width: 12px
+    height: 12px
+    border: 2px rgba(255,255,255,0.5) solid
+    +prefix(transition, all 0.3s ease)
+    &.is-active
+      background: #fff
+      border-color: #fff
+    &:hover
+      opacity: 0.5
+
+
+section
+  position: relative
+  height: 100vh
+  overflow: hidden
+  -ms-overflow-style: none
+  +animation(long-fade-in 5s ease 1)
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    height: 100vh
+    width: 100vw
+    background: rgba(0,0,0,0.2)
+    +prefix(transition, background-color 1s ease)
+  &.show-video
+    .scroll-up
+      opacity: 0
+    &:before
+      background: rgba(0,0,0,0.7)
+  +device-medium()
+    height: 50vh
+  &.one
+    +device-medium()
+      height: 100vh
+  .container
+    max-width: 1200px
+    margin: 0 auto
+    +vertical-align()
+    &.skywriting
+      text-align: center
+
+
+  .scroll-up
+    position: absolute
+    top: 10px
+    width: 100%
+    text-align: center
+    cursor: pointer
+    font-size: 0.8em
+    opacity: 1
+    +animation(long-fade-in 5s ease 1)
+    +prefix(transition, all 0.3s ease)
+    +device-medium()
+      +prefix(transform, scale(0.5))
+    &.large
+      font-size: 1.5em
+      +prefix(transform, scale(1))
+      .animated-arrow
+        .arrow
+          height: 60px
+          path 
+            stroke-width: 3px
+        .small-bold-caps
+          letter-spacing: 8px
+          margin-top: 8px
+      +device-medium()
+        top: 50px
+    .animated-arrow
+      +animation(arrow 1s ease infinite) 
+      .arrow
+        display: inline-block
+        width: 40px
+        height: 40px
+        +prefix(transform, rotate(180deg))
+        path
+          stroke: #fff
+          fill: transparent
+          stroke-width: 2px
+
+
+  .play-video 
+    cursor: pointer
+    margin-top: 0
+  .video-container
+    display: none
+    position: relative
+    padding-bottom: 56.25%
+    margin-top: 2.5%
+    z-index: 1000
+    .video
+      position: absolute
+      top: 0
+      left: 0
+      padding: 0 5%
+
+
+  .hero-team
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: 0
+    +animation(long-fade-in 5s ease 1)
+
+  .skywriting
+    display: inline-block
+    width: 600px
+    height: 460px
+    background: url('../img/up.png') top center no-repeat
+    background-size: 100%
+    background-blend-mode: overlay
+    opacity: 0.9
+    +prefix(animation, 8s blur-animation ease 1)
+    +device-medium()
+      width: 250px
+      height: 200px
+
+  .footer
+    position: absolute
+    width: 100%
+    bottom: 20px
+    text-align: center
+    color: #fff
+    font-size: 0.85em
+    opacity: 0.7
+    a
+      padding: 0 5px
+      text-decoration: none
+      color: #fff
+      &:hover
+        text-decoration: underline
+
+  h1
+    display: block
+    margin: 0
+    text-transform: uppercase
+    text-align: center
+    font-weight: 600
+    font-size: 4em
+    line-height: 1.3em
+    letter-spacing: 0.3em
+    +device-medium()
+      padding: 0 3%
+      font-size: 2em
+    .subheading
+      display: block
+      font-size: 0.35em
+      font-weight: 500
+      letter-spacing: 0.3em
+      +device-medium()
+        font-size: 0.5em
+    &.play-video
+      +prefix(transition, all 0.3s ease)
+      &:hover
+        opacity: 0.7
+    small 
+      font-size: 0.65em
+
+  .va-logo
+    width: 150px
+    margin-bottom: 20px
+    +device-medium()
+      width: 75px
+
+  .btn
+    display: inline-block
+    margin: 4% 1% 0
+    padding: 15px 25px
+    cursor: pointer
+    color: $va-red
+    border: none
+    text-decoration: none
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 6px
+    font-size: 17px
+    background: #fff
+    +prefix(transition, all 0.3s ease)
+    &:hover 
+      background: #36424a
+      color: #fff
+    &.red 
+      color: #fff
+      background: $va-red
+      &:hover 
+        background: #36424a
+        color: #fff
+    +device-medium()
+      font-size: 14px

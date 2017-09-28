@@ -1,0 +1,43 @@
+// Scroll up animation
+ 
+section
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  background-attachment: fixed
+  +device-medium()
+    background-attachment: scroll
+  &:nth-child(odd)
+    background-color: $va-purple
+  &:nth-child(even)
+    background-color: $va-red
+  &.one
+    background-attachment: scroll
+    background-image: url('../img/backgrounds/runway.jpg')
+  &.three
+    background-image: url('../img/backgrounds/crew-member-in-rain.jpg')
+  &.five
+    background-image: url('../img/backgrounds/andrea-rock-climber.jpg')
+  &.six
+    background-image: url('../img/backgrounds/michael-bike-rider.jpg')
+  &.seven
+    background-image: url('../img/backgrounds/jack-footballer.jpg')
+  &.eight
+    background-image: url('../img/backgrounds/crew-member-smiling.jpg')
+  &.nine
+    background-image: url('../img/hero-team.png')
+    background-position: bottom left
+    background-repeat: no-repeat
+    background-size: 40%
+    background-attachment: scroll
+    +device-medium()
+      background-position: top center
+      background-size: 100%
+  &.nine, &.ten 
+    background-color: transparent
+    +device-medium()
+      background-color: #4a96da
+  &.purple-background
+    background-color: $va-purple
+    &:before
+      background: rgba(0,0,0,0)
