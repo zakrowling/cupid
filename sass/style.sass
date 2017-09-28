@@ -80,7 +80,7 @@ section
     width: 100vw
     background: rgba(0,0,0,0.2)
     +prefix(transition, background-color 1s ease)
-  &.show-video
+  &.show-overlay
     .scroll-up
       opacity: 0
     &:before
@@ -136,21 +136,57 @@ section
           stroke-width: 2px
 
 
-  .play-video 
+  .trigger-overlay
     cursor: pointer
     margin-top: 0
-  .video-container
+  .overlay-container
     display: none
     position: relative
     padding-bottom: 56.25%
     margin-top: 2.5%
     z-index: 1000
-    .video
+    .video,
+    .biography
       position: absolute
       top: 0
       left: 0
       padding: 0 5%
-
+      height: 90%
+      width: 90%
+      overflow: hidden
+    .biography
+      padding: 0
+      text-align: left
+      background-color: $va-purple
+      +device-medium()
+        width: 100%
+        background-color: rgba(81,38,152,0.8)
+      .image
+        float: left
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        width: 60%
+        height: 100%
+        +device-medium()
+          display: none
+      .description
+        float: right
+        box-sizing: border-box
+        padding: 5% 3% 5% 0
+        width: 35%
+        font-weight: 300
+        line-height: 1.7em
+        +device-medium()
+          float: none
+          text-align: center
+          width: 100%
+          padding-left: 3%
+        .name
+          font-size: 2.6em
+          text-align: left
+          +device-medium()
+            text-align: center
 
   .hero-team
     position: absolute
@@ -213,11 +249,13 @@ section
     small 
       font-size: 0.65em
 
-  .va-logo
-    width: 150px
-    margin-bottom: 20px
-    +device-medium()
-      width: 75px
+  .logo
+    display: block
+    text-align: center
+    .va-logo
+      display: inline-block
+      width: 150px
+      margin: 20px 0 
 
   .btn
     display: inline-block
@@ -237,10 +275,15 @@ section
       background: #36424a
       color: #fff
     &.red 
-      color: #fff
+      margin-top: 0
       background: $va-red
+      color: #fff
       &:hover 
         background: #36424a
         color: #fff
+    &.close
+      background: rgba(0,0,0,0)
+      border: 2px #fff solid
+      color: #fff
     +device-medium()
       font-size: 14px

@@ -31,10 +31,10 @@ $(document).ready(function() {
 
 
   // Play Video
-  $('.play-video').click(function() {
+  $('.trigger-overlay').click(function() {
     var getSectionNumber = $(this).parents('section').attr('class');
-    var videoSection = $('section.' + getSectionNumber);
-    videoSection.addClass('show-video');
+    var overlaySection = $('section.' + getSectionNumber);
+    overlaySection.addClass('show-overlay');
 
     // Hide titles
     $(this).fadeOut(500);
@@ -42,14 +42,14 @@ $(document).ready(function() {
     // Scroll to top of panel
     setTimeout(function() {
       $('html, body').animate({
-        scrollTop: videoSection.offset().top
+        scrollTop: overlaySection.offset().top
       }, 500);
     }, 500);
     
     setTimeout(function() {
-      $('.show-video .video-container').fadeIn(2000);
+      $('.show-overlay .overlay-container').fadeIn(2000);
     }, 1000);
-    $('.show-video .video')[0].src += "&autoplay=1";
+    $('.show-overlay .video')[0].src += "&autoplay=1";
   });
 
 });

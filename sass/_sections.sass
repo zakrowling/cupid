@@ -7,10 +7,6 @@ section
   background-attachment: fixed
   +device-medium()
     background-attachment: scroll
-  &:nth-child(odd)
-    background-color: $va-purple
-  &:nth-child(even)
-    background-color: $va-red
   &.one
     background-attachment: scroll
     background-image: url('../img/backgrounds/runway.jpg')
@@ -18,6 +14,9 @@ section
     background-image: url('../img/backgrounds/crew-member-in-rain.jpg')
   &.five
     background-image: url('../img/backgrounds/andrea-rock-climber.jpg')
+    .biography
+      .image
+        background-image: url('../img/backgrounds/andrea-rock-climber.jpg')
   &.six
     background-image: url('../img/backgrounds/michael-bike-rider.jpg')
   &.seven
@@ -35,6 +34,7 @@ section
       background-size: 100%
   &.nine, &.ten 
     background-color: transparent
+    +animation(long-fade-in 15s ease 1)
     +device-medium()
       background-color: #4a96da
   &.purple-background
