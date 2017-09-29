@@ -154,9 +154,6 @@ section
         height: 100vh
       +device-medium()
         height: 50vh
-      .biography
-        +device-large()
-          height: 100%
     .video,
     .biography
       position: absolute
@@ -167,11 +164,14 @@ section
       width: 90%
       overflow: hidden
     .biography
+      box-sizing: border-box
+      width: 100%
       padding: 0
       text-align: left
       background-color: $va-purple
       +device-large()
-        width: 100%
+        padding: 0 5%
+        height: 100%
         background-color: rgba(81,38,152,0.7)
       .image
         float: left
