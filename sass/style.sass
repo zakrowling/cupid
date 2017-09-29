@@ -94,6 +94,8 @@ section
     max-width: 1200px
     margin: 0 auto
     +vertical-align()
+    +device-large()
+      max-width: 100%
     &.skywriting
       text-align: center
 
@@ -145,6 +147,16 @@ section
     padding-bottom: 56.25%
     margin-top: 2.5%
     z-index: 1000
+    &.profile
+      +device-large()
+        margin-top: 0
+        padding-bottom: 0
+        height: 100vh
+      +device-medium()
+        height: 50vh
+      .biography
+        +device-large()
+          height: 100%
     .video,
     .biography
       position: absolute
@@ -158,9 +170,9 @@ section
       padding: 0
       text-align: left
       background-color: $va-purple
-      +device-medium()
+      +device-large()
         width: 100%
-        background-color: rgba(81,38,152,0.8)
+        background-color: rgba(81,38,152,0.7)
       .image
         float: left
         background-position: center center
@@ -168,7 +180,7 @@ section
         background-size: cover
         width: 60%
         height: 100%
-        +device-medium()
+        +device-large()
           display: none
       .description
         float: right
@@ -177,15 +189,16 @@ section
         width: 35%
         font-weight: 300
         line-height: 1.7em
-        +device-medium()
+        +device-large()
           float: none
           text-align: center
           width: 100%
           padding-left: 3%
+          +vertical-align()
         .name
           font-size: 2.6em
           text-align: left
-          +device-medium()
+          +device-large()
             text-align: center
 
   .hero-team

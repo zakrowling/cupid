@@ -30,7 +30,7 @@ $(document).ready(function() {
   });
 
 
-  // Play Video
+  // Trigger Overlay
   $('.trigger-overlay').click(function() {
     var getSectionNumber = $(this).parents('section').attr('class');
     var overlaySection = $('section.' + getSectionNumber);
@@ -47,9 +47,26 @@ $(document).ready(function() {
     }, 500);
     
     setTimeout(function() {
-      $('.show-overlay .overlay-container').fadeIn(2000);
-    }, 1000);
-    $('.show-overlay .video')[0].src += "&autoplay=1";
+      $('.show-overlay .overlay-container').fadeIn(1000);
+    }, 600);
+
+    if(overlaySection.find('.video').length !== 0) {
+      $('.show-overlay .video')[0].src += "&autoplay=1";
+    }
+  });
+
+
+  // Close Overlay
+  $('.close.btn').click(function() {
+    var getSectionNumber = $(this).parents('section').attr('class').split(' ')[0];
+    var overlaySection = $('section.' + getSectionNumber);
+
+    // Show title
+    $('.show-overlay .overlay-container').fadeOut(500);
+    setTimeout(function() {
+      $('section .trigger-overlay').show();
+      $('section').removeClass('show-overlay');
+    }, 650);
   });
 
 });
